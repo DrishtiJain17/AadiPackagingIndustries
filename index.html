@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadi Packaging Industries – BOPP Tapes & Corrugated Box Manufacturer, Meerut</title>
+<meta name="description" content="Aadi Packaging Industries – Meerut-based manufacturer of BOPP tapes, corrugated boxes, printed tapes, mango packing boxes and self-adhesive tapes. Est. 2001. Owned by Mr. Ankur Jain.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ───────────────────────────────────────── */
+  :root {
+    --ink:      #0D1117;
+    --paper:    #F7F5F0;
+    --flame:    #E8430A;
+    --flame-lt: #FF6A3D;
+    --slate:    #3B4A5A;
+    --mist:     #EAE8E3;
+    --white:    #FFFFFF;
+    --gold:     #C9881E;
+
+    --display: 'Syne', sans-serif;
+    --body:    'Inter', sans-serif;
+
+    --r: 4px;
+    --r-lg: 12px;
+    --transition: 0.25s ease;
+  }
+
+  /* ── RESET ────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); color: var(--ink); background: var(--white); }
+  img  { max-width: 100%; display: block; }
+  a    { text-decoration: none; color: inherit; }
+  ul   { list-style: none; }
+
+  /* ── UTILITY ──────────────────────────────────────── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px; border-radius: var(--r);
+    font-family: var(--display); font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer;
+    border: none; transition: var(--transition);
+  }
+  .btn-flame  { background: var(--flame); color: var(--white); }
+  .btn-flame:hover { background: var(--flame-lt); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+  .btn-outline:hover { background: rgba(255,255,255,0.12); }
+  .btn-dark { background: var(--ink); color: var(--white); }
+  .btn-dark:hover { background: var(--slate); }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--display); font-weight: 700;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--flame); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.15; color: var(--ink);
+  }
+  .section-title span { color: var(--flame); }
+  .section-sub {
+    font-size: 1.05rem; color: var(--slate); max-width: 580px; line-height: 1.7;
+    margin-top: 16px;
+  }
+
+  /* ── TOPBAR ───────────────────────────────────────── */
+  .topbar {
+    background: var(--ink); color: rgba(255,255,255,0.7);
+    font-size: 0.8rem; padding: 8px 0;
+  }
+  .topbar .container {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .topbar a { color: rgba(255,255,255,0.7); }
+  .topbar a:hover { color: var(--flame-lt); }
+  .topbar-contact { display: flex; gap: 20px; }
+  .topbar-social  { display: flex; gap: 14px; }
+
+  /* ── NAVBAR ───────────────────────────────────────── */
+  .navbar {
+    background: var(--white); position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .navbar .container {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px; gap: 16px;
+  }
+  .logo {
+    font-family: var(--display); font-weight: 800; font-size: 1.5rem; color: var(--ink);
+    display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 42px; height: 42px; background: var(--flame);
+    border-radius: var(--r); display: grid; place-items: center; flex-shrink: 0;
+  }
+  .logo-icon svg { width: 24px; height: 24px; fill: white; }
+  .logo span { color: var(--flame); }
+
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links > li { position: relative; }
+  .nav-links > li > a {
+    font-family: var(--display); font-weight: 600; font-size: 0.88rem;
+    letter-spacing: 0.02em; padding: 8px 12px; border-radius: var(--r);
+    display: flex; align-items: center; gap: 4px; transition: var(--transition);
+    color: var(--ink);
+  }
+  .nav-links > li > a:hover,
+  .nav-links > li > a.active { color: var(--flame); background: rgba(232,67,10,0.06); }
+
+  .dropdown {
+    position: absolute; top: calc(100% + 8px); left: 0;
+    background: var(--white); border: 1px solid var(--mist);
+    border-radius: var(--r-lg); min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 8px 0;
+    opacity: 0; pointer-events: none; transform: translateY(-8px);
+    transition: var(--transition); z-index: 200;
+  }
+  .nav-links > li:hover .dropdown {
+    opacity: 1; pointer-events: all; transform: translateY(0);
+  }
+  .dropdown a {
+    display: block; padding: 9px 18px; font-size: 0.86rem; color: var(--slate);
+    transition: var(--transition);
+  }
+  .dropdown a:hover { color: var(--flame); background: rgba(232,67,10,0.05); padding-left: 24px; }
+
+  .nav-cta { margin-left: 8px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: var(--transition); border-radius: 2px; }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    background: var(--ink);
+    min-height: 88vh;
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; right: 0; top: 0; width: 50%; height: 100%;
+    background: linear-gradient(135deg, #1a2535 0%, #0D1117 100%);
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0.035;
+    background-image:
+      repeating-linear-gradient(0deg, white 0px, white 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, white 0px, white 1px, transparent 1px, transparent 40px);
+  }
+  .hero-content {
+    padding: 80px 60px 80px 0;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(232,67,10,0.15); border: 1px solid rgba(232,67,10,0.3);
+    color: var(--flame-lt); padding: 6px 14px; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--flame-lt); }
+  .hero h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.08;
+    color: var(--white); letter-spacing: -0.02em;
+  }
+  .hero h1 .accent { color: var(--flame); }
+  .hero p {
+    color: rgba(255,255,255,0.6); font-size: 1.1rem; line-height: 1.7;
+    max-width: 480px; margin: 24px 0 36px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 52px; padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-num {
+    font-family: var(--display); font-weight: 800; font-size: 2rem; color: var(--white); line-height: 1;
+  }
+  .stat-num span { color: var(--flame); }
+  .stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
+
+  .hero-visual {
+    position: relative; z-index: 2; height: 88vh; display: flex; align-items: center; justify-content: center;
+  }
+  .hero-boxes {
+    position: relative; width: 380px; height: 380px;
+  }
+  .box-3d {
+    position: absolute; border-radius: var(--r-lg);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 700; color: white;
+    font-size: 0.8rem; letter-spacing: 0.04em;
+    animation: float 4s ease-in-out infinite;
+  }
+  .box-3d:nth-child(1) {
+    width: 220px; height: 220px; background: linear-gradient(135deg, var(--flame) 0%, #c2380a 100%);
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-size: 1rem; flex-direction: column; gap: 8px;
+    box-shadow: 0 20px 60px rgba(232,67,10,0.4);
+  }
+  .box-3d:nth-child(2) {
+    width: 100px; height: 100px; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    top: 10px; right: 20px; animation-delay: 1.2s;
+  }
+  .box-3d:nth-child(3) {
+    width: 80px; height: 80px; background: var(--gold);
+    bottom: 60px; left: 10px; animation-delay: 0.6s;
+  }
+  .box-3d:nth-child(4) {
+    width: 60px; height: 60px; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    bottom: 30px; right: 60px; animation-delay: 1.8s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+    50%       { transform: translate(-50%, -50%) translateY(-14px); }
+  }
+  .box-3d:not(:nth-child(1)) {
+    animation: floatSimple 4s ease-in-out infinite;
+  }
+  @keyframes floatSimple {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  /* ── TRUST BAR ────────────────────────────────────── */
+  .trust-bar {
+    background: var(--mist); padding: 20px 0; border-bottom: 1px solid #ddd;
+  }
+  .trust-bar .container {
+    display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 16px;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.9rem; font-weight: 500; color: var(--slate);
+  }
+  .trust-icon { font-size: 1.4rem; }
+
+  /* ── PRODUCTS ─────────────────────────────────────── */
+  .products { padding: 96px 0; background: var(--white); }
+  .products-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 24px; margin-bottom: 56px; flex-wrap: wrap;
+  }
+  .products-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .product-card {
+    border: 1px solid var(--mist); border-radius: var(--r-lg); overflow: hidden;
+    transition: var(--transition); cursor: pointer; background: var(--white);
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); border-color: var(--flame); }
+  .product-card-img {
+    height: 200px; background: var(--mist);
+    display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
+  }
+  .product-card-img .prod-icon { font-size: 4rem; }
+  .product-card-img .prod-label {
+    position: absolute; bottom: 12px; left: 12px;
+    background: var(--ink); color: var(--white);
+    font-family: var(--display); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .product-card-body { padding: 20px; }
+  .product-card-body h3 {
+    font-family: var(--display); font-weight: 700; font-size: 1.05rem;
+    margin-bottom: 8px; color: var(--ink);
+  }
+  .product-card-body p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
+  .product-card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px; border-top: 1px solid var(--mist);
+    font-size: 0.82rem; color: var(--slate);
+  }
+  .product-card-footer a { color: var(--flame); font-weight: 600; font-size: 0.85rem; }
+  .product-card-footer a:hover { text-decoration: underline; }
+
+  /* ── ABOUT ────────────────────────────────────────── */
+  .about {
+    padding: 96px 0; background: var(--paper);
+  }
+  .about .container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-main {
+    border-radius: var(--r-lg); overflow: hidden;
+    background: linear-gradient(135deg, var(--slate) 0%, var(--ink) 100%);
+    height: 420px; display: flex; align-items: center; justify-content: center;
+    font-size: 8rem;
+  }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--flame); color: var(--white);
+    border-radius: var(--r-lg); padding: 20px 24px;
+    box-shadow: 0 8px 32px rgba(232,67,10,0.35);
+  }
+  .about-badge-num { font-family: var(--display); font-weight: 800; font-size: 2.2rem; line-height: 1; }
+  .about-badge-lbl { font-size: 0.75rem; opacity: 0.85; margin-top: 4px; }
+  .about-list { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .about-list-item {
+    display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;
+  }
+  .about-list-item::before {
+    content: '✓'; display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; min-width: 22px;
+    background: rgba(232,67,10,0.1); color: var(--flame);
+    border-radius: 50%; font-size: 0.7rem; font-weight: 700; margin-top: 1px;
+  }
+
+  /* ── WHY US ───────────────────────────────────────── */
+  .why { padding: 96px 0; background: var(--ink); }
+  .why .container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .why .section-title { color: var(--white); }
+  .why .section-sub { color: rgba(255,255,255,0.55); }
+  .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .why-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--r-lg); padding: 24px 20px; transition: var(--transition);
+  }
+  .why-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(232,67,10,0.4); }
+  .why-card-icon { font-size: 2rem; margin-bottom: 14px; }
+  .why-card h4 { font-family: var(--display); font-weight: 700; color: var(--white); font-size: 1rem; margin-bottom: 8px; }
+  .why-card p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ── CALCULATOR ───────────────────────────────────── */
+  .calc-section { padding: 96px 0; background: var(--paper); }
+  .calc-section .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .calc-form { background: var(--white); border: 1px solid var(--mist); border-radius: var(--r-lg); padding: 36px; }
+  .calc-form h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; margin-bottom: 24px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--slate); }
+  .form-group input, .form-group select {
+    padding: 11px 14px; border: 1.5px solid var(--mist);
+    border-radius: var(--r); font-family: var(--body); font-size: 0.9rem; color: var(--ink);
+    background: var(--white); transition: var(--transition);
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none; border-color: var(--flame); box-shadow: 0 0 0 3px rgba(232,67,10,0.1);
+  }
+  .calc-result {
+    background: var(--ink); color: var(--white);
+    border-radius: var(--r-lg); padding: 36px; display: none; flex-direction: column; gap: 20px;
+  }
+  .calc-result.show { display: flex; }
+  .result-row { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .result-row:last-child { border-bottom: none; }
+  .result-label { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+  .result-value { font-family: var(--display); font-weight: 700; color: var(--white); }
+  .result-value.highlight { color: var(--flame-lt); font-size: 1.1rem; }
+
+  /* ── SECTORS ──────────────────────────────────────── */
+  .sectors { padding: 96px 0; background: var(--white); }
+  .sectors-header { text-align: center; margin-bottom: 56px; }
+  .sectors-header .section-sub { margin: 16px auto 0; }
+  .sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .sector-card {
+    border-radius: var(--r-lg); padding: 36px 28px; transition: var(--transition); cursor: default;
+    border: 1px solid var(--mist);
+  }
+  .sector-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .sector-card .sector-icon { font-size: 2.5rem; margin-bottom: 20px; }
+  .sector-card h3 { font-family: var(--display); font-weight: 700; font-size: 1.15rem; margin-bottom: 10px; }
+  .sector-card p { font-size: 0.875rem; color: var(--slate); line-height: 1.65; }
+  .sector-card.featured { background: var(--flame); color: var(--white); border-color: transparent; }
+  .sector-card.featured h3, .sector-card.featured p { color: rgba(255,255,255,0.9); }
+
+  /* ── TESTIMONIALS ─────────────────────────────────── */
+  .testimonials { padding: 96px 0; background: var(--paper); }
+  .testimonials-header { text-align: center; margin-bottom: 56px; }
+  .testimonials-header .section-sub { margin: 16px auto 0; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .testi-card {
+    background: var(--white); border: 1px solid var(--mist);
+    border-radius: var(--r-lg); padding: 32px 28px;
+    transition: var(--transition);
+  }
+  .testi-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--flame); }
+  .testi-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
+  .testi-card blockquote { font-size: 0.93rem; color: var(--slate); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--flame); color: white;
+    font-family: var(--display); font-weight: 800; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .testi-name { font-family: var(--display); font-weight: 700; font-size: 0.9rem; }
+  .testi-role { font-size: 0.78rem; color: var(--slate); margin-top: 2px; }
+
+  /* ── CONTACT ──────────────────────────────────────── */
+  .contact { padding: 96px 0; background: var(--ink); }
+  .contact .container { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+  .contact .section-title { color: var(--white); }
+  .contact .section-sub { color: rgba(255,255,255,0.5); }
+  .contact-info-list { margin-top: 36px; display: flex; flex-direction: column; gap: 24px; }
+  .contact-info-item { display: flex; gap: 16px; }
+  .contact-info-icon {
+    width: 44px; height: 44px; background: rgba(255,255,255,0.07);
+    border-radius: var(--r); display: grid; place-items: center; font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-info-label { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .contact-info-value { color: var(--white); font-weight: 500; font-size: 0.95rem; }
+
+  .contact-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-lg); padding: 36px; }
+  .contact-form h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; color: var(--white); margin-bottom: 24px; }
+  .contact-form .form-group label { color: rgba(255,255,255,0.6); }
+  .contact-form .form-group input,
+  .contact-form .form-group select,
+  .contact-form .form-group textarea {
+    background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: var(--white);
+  }
+  .contact-form .form-group input::placeholder,
+  .contact-form .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .contact-form .form-group textarea {
+    padding: 11px 14px; border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: var(--r); font-family: var(--body); font-size: 0.9rem; color: var(--white);
+    background: rgba(255,255,255,0.06); resize: vertical; min-height: 100px; transition: var(--transition);
+  }
+  .contact-form .form-group textarea:focus { outline: none; border-color: var(--flame); box-shadow: 0 0 0 3px rgba(232,67,10,0.15); }
+  .contact-form .form-group input:focus, .contact-form .form-group select:focus {
+    background: rgba(255,255,255,0.09);
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .footer { background: #080C11; padding: 64px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand .logo { margin-bottom: 16px; }
+  .footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 300px; }
+  .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+  .social-btn {
+    width: 36px; height: 36px; background: rgba(255,255,255,0.06);
+    border-radius: var(--r); display: grid; place-items: center;
+    font-size: 1rem; transition: var(--transition); color: rgba(255,255,255,0.5);
+  }
+  .social-btn:hover { background: var(--flame); color: white; }
+  .footer-col h4 { font-family: var(--display); font-weight: 700; color: var(--white); font-size: 0.9rem; margin-bottom: 18px; }
+  .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { font-size: 0.84rem; color: rgba(255,255,255,0.4); transition: var(--transition); }
+  .footer-col ul a:hover { color: var(--flame-lt); }
+  .footer-bottom {
+    padding: 20px 0; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 0.82rem; color: rgba(255,255,255,0.3);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.4); }
+  .footer-bottom a:hover { color: var(--flame-lt); }
+
+  /* ── FLOATING WA ─────────────────────────────────── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+    width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    transition: var(--transition);
+    font-size: 1.6rem;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
+
+  /* ── BACK TO TOP ──────────────────────────────────── */
+  .back-top {
+    position: fixed; bottom: 96px; right: 28px; z-index: 9999;
+    width: 40px; height: 40px; background: var(--flame); color: white;
+    border-radius: var(--r); display: grid; place-items: center; font-size: 1.1rem;
+    cursor: pointer; transition: var(--transition);
+    opacity: 0; pointer-events: none;
+  }
+  .back-top.show { opacity: 1; pointer-events: all; }
+  .back-top:hover { background: var(--flame-lt); }
+
+  /* ── MOBILE NAV ───────────────────────────────────── */
+  .mobile-menu {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--ink); z-index: 2000; padding: 80px 24px 40px; overflow-y: auto;
+    flex-direction: column; gap: 8px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-close {
+    position: absolute; top: 20px; right: 24px; cursor: pointer;
+    width: 36px; height: 36px; background: rgba(255,255,255,0.08);
+    border-radius: var(--r); display: grid; place-items: center;
+    font-size: 1.2rem; color: white;
+  }
+  .mobile-menu a {
+    color: white; font-family: var(--display); font-weight: 600; font-size: 1.1rem;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: var(--transition);
+  }
+  .mobile-menu a:hover { color: var(--flame-lt); }
+
+  /* ── RESPONSIVE ───────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .topbar .topbar-contact span:not(:first-child) { display: none; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero::before { display: none; }
+    .hero-content { padding: 60px 0 40px; }
+    .hero-visual { display: none; }
+    .hero-stats { gap: 20px; }
+
+    .about .container,
+    .why .container,
+    .calc-section .container,
+    .contact .container { grid-template-columns: 1fr; gap: 40px; }
+    .about-badge { position: relative; bottom: auto; right: auto; margin-top: 16px; display: inline-flex; gap: 16px; }
+
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .sectors-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .why-cards { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 500px) {
+    .products-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── TOAST ────────────────────────────────────────── */
+  .toast {
+    position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: white; padding: 12px 24px; border-radius: 100px;
+    font-size: 0.9rem; opacity: 0; transition: 0.4s; pointer-events: none; z-index: 9999;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── SECTION SEPARATOR ────────────────────────────── */
+  .sep {
+    width: 48px; height: 4px; background: var(--flame);
+    border-radius: 2px; margin: 16px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-contact">
+      <span>📞 <a href="tel:+919837181051">+91 9837181051</a></span>
+      <span>✉️ <a href="mailto:aadi34b@yahoo.co.in">aadi34b@yahoo.co.in</a></span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" title="Facebook">fb</a>
+      <a href="https://www.instagram.com/aadi.groups?igsh=MTI2Ym0xbGM5NDMzZw==" title="Instagram">Instagram</a>
+      <a href="#" title="LinkedIn">in</a>
+      <a href="#" title="YouTube">yt</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="logo">
+      <!-- <div class="logo-icon"> -->
+        <img class="logo-icon" src="assets/LOGO.jpeg">
+      <!-- </div> -->
+      Aadi <span>Packaging</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li>
+        <a href="#products">Products ▾</a>
+        <ul class="dropdown">
+          <li><a href="#products">Corrugated Boxes (3 Ply / 5 Ply)</a></li>
+          <li><a href="#products">BOPP Transparent Tapes</a></li>
+          <li><a href="#products">Color BOPP Tapes</a></li>
+          <li><a href="#products">Customized Printed Tapes</a></li>
+          <li><a href="#products">BOPP Jumbo Rolls</a></li>
+          <li><a href="#products">Mango Packing Boxes</a></li>
+          <li><a href="#products">Shuttering Tape</a></li>
+          <li><a href="#products">Amazon Packing Tape</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#sectors">Industries ▾</a>
+        <ul class="dropdown">
+          <li><a href="#sectors">E-Commerce & Courier</a></li>
+          <li><a href="#sectors">Agriculture & Horticulture</a></li>
+          <li><a href="#sectors">Food & FMCG</a></li>
+          <li><a href="#sectors">Construction</a></li>
+          <li><a href="#sectors">Manufacturing & Industry</a></li>
+          <li><a href="#sectors">Wholesale & Distribution</a></li>
+        </ul>
+      </li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="btn btn-flame nav-cta">Get a Quote</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="toggleMenu()">✕</span>
+  <a href="#" onclick="toggleMenu()">Home</a>
+  <a href="#products" onclick="toggleMenu()">Products</a>
+  <a href="#sectors" onclick="toggleMenu()">Industries</a>
+  <a href="#about" onclick="toggleMenu()">About Us</a>
+  <a href="#calculator" onclick="toggleMenu()">Calculator</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#contact" onclick="toggleMenu()" style="color: #FF6A3D; margin-top: 12px;">Get a Quote →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="container" style="display: contents;">
+    <div class="hero-content container">
+      <h1>
+        Pack Smarter,<br>
+        <span class="accent">Ship Stronger</span>
+      </h1>
+      <p>Aadi Packaging Industries — a Meerut-based partnership firm established in 2001 — manufactures premium BOPP tapes, corrugated boxes, printed tapes and specialty packaging. Trusted by businesses across India, led by Mr. Ankur Jain.</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-flame">Explore Products</a>
+        <a href="#contact" class="btn btn-outline">Request a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">20<span>+</span></div>
+          <div class="stat-lbl">Years in Business</div>
+        </div>
+        <div>
+          <div class="stat-num">51<span>–100</span></div>
+          <div class="stat-lbl">Employees</div>
+        </div>
+        <div>
+          <div class="stat-num">₹5Cr<span>+</span></div>
+          <div class="stat-lbl">Annual Turnover</div>
+        </div>
+        <div>
+          <div class="stat-num">4.5<span>★</span></div>
+          <div class="stat-lbl">IndiaMART Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-boxes">
+      <div class="box-3d" style="animation: none; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:220px; height:220px; background:linear-gradient(135deg,#E8430A,#c2380a); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; box-shadow:0 20px 60px rgba(232,67,10,0.4); animation: float 4s ease-in-out infinite;">
+        <span style="font-size:3rem;">📦</span>
+        <span style="font-family:'Syne',sans-serif; font-weight:700; color:white; letter-spacing:0.05em;">AADI</span>
+        <span style="font-size:0.7rem; color:rgba(255,255,255,0.7); letter-spacing:0.1em;">PACKAGING</span>
+      </div>
+      <div class="box-3d" style="width:100px; height:100px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); top:10px; right:20px; position:absolute; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🗃️</div>
+      <div class="box-3d" style="width:80px; height:80px; background:#C9881E; bottom:60px; left:10px; position:absolute; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🏷️</div>
+      <div class="box-3d" style="width:60px; height:60px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); bottom:30px; right:60px; position:absolute; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem;">📮</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><span class="trust-icon">📼</span> BOPP Tape Specialists</div>
+    <div class="trust-item"><span class="trust-icon">📦</span> Corrugated Box Manufacturers</div>
+    <div class="trust-item"><span class="trust-icon">🎨</span> Custom Printed Tapes</div>
+    <div class="trust-item"><span class="trust-icon">🚚</span> Pan India Delivery (By Road)</div>
+    <div class="trust-item"><span class="trust-icon">⭐</span> 4.5★ on IndiaMART</div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <div class="tag">Our Products</div>
+        <h2 class="section-title">BOPP Tapes &amp; <span>Corrugated Boxes</span></h2>
+        <p class="section-sub">Our core product range — manufactured at our Meerut facility and delivered across India. All products available for wholesale and bulk orders.</p>
+      </div>
+      <a href="#contact" class="btn btn-dark" style="white-space:nowrap;">Request a Quote</a>
+    </div>
+    <div class="products-grid">
+
+      <!-- CORRUGATED BOXES -->
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #fff5f0, #ffe0d0);">
+          <span class="prod-icon">📦</span>
+          <span class="prod-label">₹ 17/Piece</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Jaggery 5 Ply Corrugated Box</h3>
+          <p>Heavy-duty 5-ply corrugated boxes specifically designed for jaggery packing. Strong and moisture-resistant.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 17 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f5f8ff, #dce8ff);">
+          <span class="prod-icon">📫</span>
+        </div>
+        <div class="product-card-body">
+          <h3>3 Ply Brown Corrugated Paper Boxes</h3>
+          <p>Standard 3-ply brown corrugated boxes for general packaging. Available in custom sizes.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 45 / Kg</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f5fff0, #d8ffd8);">
+          <span class="prod-icon">🖨️</span>
+          <span class="prod-label">Custom Print</span>
+        </div>
+        <div class="product-card-body">
+          <h3>3 Ply Printed Corrugated Boxes</h3>
+          <p>Custom-printed 3-ply corrugated packaging boxes. Ideal for branding and retail-ready shipments.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 45 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #fffbf0, #fff0b0);">
+          <span class="prod-icon">📜</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Rectangle Corrugated Packaging Box</h3>
+          <p>Standard rectangle corrugated boxes for diverse packaging requirements across industries.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 42 / Kg</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <!-- BOPP TAPES -->
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f0f5ff, #d0dfff);">
+          <span class="prod-icon">📼</span>
+          <span class="prod-label">Best Seller</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Single Sided BOPP Transparent Tape</h3>
+          <p>High-quality single-sided BOPP transparent tape for carton sealing and packaging use.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 35 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #fff0f5, #ffd0d0);">
+          <span class="prod-icon">🔴</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Color BOPP Self Adhesive Tapes</h3>
+          <p>Available in red, blue, silver, and more colors. High-tack adhesive for secure sealing.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>From ₹ 55 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f5f0ff, #ddd0ff);">
+          <span class="prod-icon">🎨</span>
+          <span class="prod-label">Custom Print</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Customized Printed BOPP Tape</h3>
+          <p>Get your brand logo printed on BOPP tape. Minimum order per box. Ideal for e-commerce and courier use.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 2,200 / Box</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #fff8f0, #ffd8b0);">
+          <span class="prod-icon">🥭</span>
+          <span class="prod-label">Seasonal</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Mango Packing Boxes</h3>
+          <p>Corrugated mango packing boxes designed to protect fruit during transit. Available in multiple sizes.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>From ₹ 13 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f0f5f0, #c8e0c8);">
+          <span class="prod-icon">🧻</span>
+        </div>
+        <div class="product-card-body">
+          <h3>BOPP Jumbo Rolls (288mm / 1315mm)</h3>
+          <p>Industrial jumbo tape rolls for tape slitting businesses. Available in transparent and brown variants.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 125–210 / Kg</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f0ffff, #c8f0f0);">
+          <span class="prod-icon">🏗️</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Ultratech Shuttering Tape</h3>
+          <p>Heavy-duty adhesive shuttering tape used in construction and industrial flooring applications.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 50 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #f5f5f0, #e0ddc8);">
+          <span class="prod-icon">📦</span>
+        </div>
+        <div class="product-card-body">
+          <h3>6 Kg Corrugated Paper Box</h3>
+          <p>Standard corrugated paper box for 6 kg load capacity. Widely used for FMCG and general cargo packaging.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 38 / Kg</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(135deg, #fff0e8, #ffc8a0);">
+          <span class="prod-icon">📮</span>
+          <span class="prod-label">Amazon Ready</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Amazon/E-Commerce Packing Tape</h3>
+          <p>Branded packing tape compatible with Amazon, Flipkart and other marketplace packaging requirements.</p>
+        </div>
+        <div class="product-card-footer">
+          <span>₹ 36 / Piece</span>
+          <a href="#contact">Enquire →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-img-wrap">
+      <div class="about-img-main">
+        <span>🏭</span>
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">Est.</div>
+        <div class="about-badge-lbl">2001 · Meerut, UP</div>
+      </div>
+    </div>
+    <div>
+      <div class="tag">Who We Are</div>
+      <h2 class="section-title">Established 2001,<br><span>Meerut, Uttar Pradesh</span></h2>
+      <div class="sep"></div>
+      <p class="section-sub">Aadi Packaging Indusries is a partnership firm established in 2001, led by <strong>Mr. Ankur Jain</strong>. Based in Meerut (UP), we are a leading manufacturer of BOPP tapes and corrugated boxes, supplying businesses across India with quality-assured packaging at reasonable rates.</p>
+      <ul class="about-list" style="margin-top: 28px;">
+        <li class="about-list-item">Partnership firm with 20+ years of manufacturing experience</li>
+        <li class="about-list-item">Team of 51–100 skilled professionals and quality analysts</li>
+        <li class="about-list-item">Annual turnover of ₹1.5–5 Cr, growing year on year</li>
+        <li class="about-list-item">Well-functional infrastructural unit in Meerut, Uttar Pradesh</li>
+        <li class="about-list-item">Delivery by road across India — on time, every time</li>
+        <li class="about-list-item">Payment via Cash, Credit Card, DD, Cheque and Online modes</li>
+        <li class="about-list-item">Rated 4.5★ on IndiaMART with verified client reviews</li>
+        <li class="about-list-item">Ethical business policies and transparent dealings</li>
+      </ul>
+      <div style="margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#contact" class="btn btn-flame">Talk to Us</a>
+        <a href="#calculator" class="btn btn-dark">Price Calculator</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <div>
+      <div class="tag" style="color: var(--flame-lt);">Why Choose Us</div>
+      <h2 class="section-title">The Aadi<br><span>Advantage</span></h2>
+      <p class="section-sub">We do not just sell boxes — we partner with businesses to build packaging that protects products, strengthens brands, and keeps logistics costs low.</p>
+      <a href="#contact" class="btn btn-flame" style="margin-top: 32px;">Get Started Today</a>
+    </div>
+    <div class="why-cards">
+      <div class="why-card">
+        <div class="why-card-icon">✅</div>
+        <h4>Quality Assured Products</h4>
+        <p>Every batch of boxes and tapes is checked for strength, adhesion and dimensional accuracy before dispatch.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">👨‍💼</div>
+        <h4>Adept Team of Professionals</h4>
+        <p>Engineers, quality analysts, technicians and skilled workforce of 51–100 people dedicated to excellence.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🤝</div>
+        <h4>Ethical Business Policies</h4>
+        <p>Transparent pricing, honest dealings and no hidden charges. We build long-term relationships, not one-off sales.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">💰</div>
+        <h4>Reasonable, Competitive Prices</h4>
+        <p>Direct manufacturer pricing — no middlemen markup. Wholesale and bulk rates available for all products.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🚚</div>
+        <h4>Large Distribution Network</h4>
+        <p>Road-based logistics across India. Timely delivery to your doorstep with consistent supply reliability.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🎯</div>
+        <h4>Client-Centric Approach</h4>
+        <p>We understand your exact packaging needs and offer tailored solutions — from custom print to specific dimensions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div>
+      <div class="tag">Price Estimator</div>
+      <h2 class="section-title">Quick Box<br><span>Price Calculator</span></h2>
+      <div class="sep"></div>
+      <p class="section-sub">Get an instant ballpark estimate for your corrugated box requirement. Enter your dimensions and quantity to see estimated pricing.</p>
+      <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display:flex; align-items:center; gap:12px; font-size:0.9rem; color: var(--slate);">
+          <span style="width:28px; height:28px; background: rgba(232,67,10,0.1); border-radius:50%; display:grid; place-items:center; color: var(--flame); font-weight:700; font-size:0.8rem; flex-shrink:0;">1</span>
+          Enter your box dimensions (L × W × H in inches)
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; font-size:0.9rem; color: var(--slate);">
+          <span style="width:28px; height:28px; background: rgba(232,67,10,0.1); border-radius:50%; display:grid; place-items:center; color: var(--flame); font-weight:700; font-size:0.8rem; flex-shrink:0;">2</span>
+          Choose ply type and quantity
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; font-size:0.9rem; color: var(--slate);">
+          <span style="width:28px; height:28px; background: rgba(232,67,10,0.1); border-radius:50%; display:grid; place-items:center; color: var(--flame); font-weight:700; font-size:0.8rem; flex-shrink:0;">3</span>
+          Get your instant estimate and place an order
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="calc-form">
+        <h3>📦 Box Price Estimator</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Length (inches)</label>
+            <input type="number" id="calcL" placeholder="e.g. 12" min="3" max="60">
+          </div>
+          <div class="form-group">
+            <label>Width (inches)</label>
+            <input type="number" id="calcW" placeholder="e.g. 8" min="3" max="60">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Height (inches)</label>
+            <input type="number" id="calcH" placeholder="e.g. 6" min="2" max="40">
+          </div>
+          <div class="form-group">
+            <label>Ply Type</label>
+            <select id="calcPly">
+              <option value="3">3 Ply (Single Wall)</option>
+              <option value="5" selected>5 Ply (Double Wall)</option>
+              <option value="7">7 Ply (Triple Wall)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" id="calcQty" placeholder="e.g. 500" min="100">
+          </div>
+          <div class="form-group">
+            <label>Print Option</label>
+            <select id="calcPrint">
+              <option value="plain">Plain (No Print)</option>
+              <option value="1color">1 Color Print</option>
+              <option value="2color">2 Color Print</option>
+              <option value="custom">Custom Full Color</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-flame" style="width:100%; justify-content:center;" onclick="calculate()">
+          Calculate Estimate
+        </button>
+      </div>
+
+      <div class="calc-result" id="calcResult">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: white; margin-bottom: 4px;">📊 Your Estimate</div>
+        <div class="result-row">
+          <span class="result-label">Box Size (L×W×H)</span>
+          <span class="result-value" id="rSize">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Ply Type</span>
+          <span class="result-value" id="rPly">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Quantity</span>
+          <span class="result-value" id="rQty">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Price Per Box</span>
+          <span class="result-value" id="rPer">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Total Estimate</span>
+          <span class="result-value highlight" id="rTotal">—</span>
+        </div>
+        <p style="font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 4px;">* Estimates are indicative. Final price confirmed after order review.</p>
+        <a href="#contact" class="btn btn-flame" style="justify-content: center; margin-top: 4px;">Place an Inquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors" id="sectors">
+  <div class="container">
+    <div class="sectors-header">
+      <div class="tag">Industries We Serve</div>
+      <h2 class="section-title">Packaging for <span>Every Sector</span></h2>
+      <p class="section-sub">From cloud kitchens to electronics exporters — Aadi Packaging Industries supplies custom solutions tailored to your industry's exact needs.</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <div class="sector-icon">🥭</div>
+        <h3>Agriculture & Horticulture</h3>
+        <p>Specially designed mango and fruit packing boxes for safe transport of perishable produce across markets.</p>
+      </div>
+      <div class="sector-card featured">
+        <div class="sector-icon">🛒</div>
+        <h3>E-Commerce & Courier</h3>
+        <p>Amazon-compatible packing tapes, corrugated mailers and durable cartons built for last-mile courier delivery.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏭</div>
+        <h3>Manufacturing & Industry</h3>
+        <p>Heavy-duty corrugated boxes and industrial tapes for factories, OEMs and bulk goods packaging needs.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🧂</div>
+        <h3>Food & FMCG</h3>
+        <p>Corrugated paper boxes for jaggery, packaged foods and FMCG goods — strong, hygienic and stackable.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏗️</div>
+        <h3>Construction</h3>
+        <p>Ultratech shuttering tapes and floor marking adhesives used by construction firms and contractors.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">📦</div>
+        <h3>Wholesale & Distribution</h3>
+        <p>BOPP jumbo rolls and self-adhesive tape reels supplied to tape distributors and converter businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <div class="tag">Client Stories</div>
+      <h2 class="section-title">Trusted by <span>2000+ Businesses</span></h2>
+      <p class="section-sub">Here's what our customers say about working with Aadi Packaging Industries.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Switched to Aadi Packaging six months ago and have not looked back. The 5-ply boxes are incredibly sturdy, and they printed our logo with perfect color accuracy."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div>
+            <div class="testi-name">Rahul Kapoor</div>
+            <div class="testi-role">Founder, QuickCart Delhi</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Fast delivery, competitive pricing and excellent customer service. They handled our bulk order of 50,000 courier bags in under a week. Highly recommended."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background: var(--gold);">SP</div>
+          <div>
+            <div class="testi-name">Sunita Patel</div>
+            <div class="testi-role">Operations Head, TrendWear</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Their food packaging is food-safe certified and beautifully made. Our pizza boxes are now a conversation piece — customers keep commenting on the branding."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background: var(--slate);">AM</div>
+          <div>
+            <div class="testi-name">Amit Mehta</div>
+            <div class="testi-role">Owner, Slice Republic</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div>
+      <div class="tag" style="color: var(--flame-lt);">Get In Touch</div>
+      <h2 class="section-title">Let's Talk<br><span>Packaging</span></h2>
+      <p class="section-sub">Whether you need 100 boxes or 1,00,000 — we've got you covered. Send us your requirements and get a quote within 2 hours.</p>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div class="contact-info-label">Our Location</div>
+            <div class="contact-info-value">Phase-2, Ind. Estate, 34-B, Delhi Road, Mohkampur, Meerut, Uttar Pradesh, 250103, India</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div>
+            <div class="contact-info-label">Phone / WhatsApp</div>
+            <div class="contact-info-value">+91 9837181051</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div>
+            <div class="contact-info-label">Email Us</div>
+            <div class="contact-info-value">aadi34b@yahoo.co.in</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">👤</div>
+          <div>
+            <div class="contact-info-label">Contact Person</div>
+            <div class="contact-info-value">Mr. Ankur Jain (Partner)</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">💳</div>
+          <div>
+            <div class="contact-info-label">Payment Accepted</div>
+            <div class="contact-info-value">Cash, Credit Card, DD, Cheque, Online</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Quote</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="cName" placeholder="Full Name">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="cPhone" placeholder="+91 9876543210">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="cEmail" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label>Product Required</label>
+          <select id="cProduct">
+            <option value="">Select Product</option>
+            <option>Corrugated Boxes</option>
+            <option>BOPP Transparent Tape</option>
+            <option>Printed BOPP Tape</option>
+            <option>Color BOPP Tape</option>
+            <option>Mango Packing Boxes</option>
+            <option>Jumbo Rolls</option>
+            <option>Shuttering Tape</option>
+            <option>Custom Requirement</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Requirement Details</label>
+        <textarea
+          id="cMessage"
+          placeholder="Mention box size, quantity, tape width, printing requirements etc."
+        ></textarea>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+        <button
+          type="button"
+          class="btn btn-flame"
+          onclick="sendWhatsApp()"
+        >
+          📱 Send on WhatsApp
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-dark"
+          onclick="sendEmail()"
+        >
+          ✉️ Send Email
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 8l-9-5-9 5v8l9 5 9-5V8zm-9 11.2L4 15V9l8 4.4 8-4.4v6.2l-8 4.4z"/>
+            </svg>
+          </div>
+          <span style="color:white;">Aadi <span style="color:var(--flame);">Packaging</span></span>
+        </a>
+        <p>Established in 2001 by Mr. Ankur Jain, Aadi Packaging Indusries is a Meerut-based manufacturer of BOPP tapes and corrugated boxes, serving businesses across India with quality packaging at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" title="Facebook">f</a>
+          <a href="#" class="social-btn" title="Instagram">ig</a>
+          <a href="#" class="social-btn" title="LinkedIn">in</a>
+          <a href="#" class="social-btn" title="YouTube">yt</a>
+          <a href="#" class="social-btn" title="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">BOPP Transparent Tapes</a></li>
+          <li><a href="#products">Color BOPP Tapes</a></li>
+          <li><a href="#products">Customized Printed Tapes</a></li>
+          <li><a href="#products">BOPP Jumbo Rolls</a></li>
+          <li><a href="#products">3 Ply Corrugated Boxes</a></li>
+          <li><a href="#products">5 Ply Corrugated Boxes</a></li>
+          <li><a href="#products">Mango Packing Boxes</a></li>
+          <li><a href="#products">Shuttering Tape</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#sectors">Industries</a></li>
+          <li><a href="#testimonials">Client Stories</a></li>
+          <li><a href="#calculator">Price Calculator</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Quality Certifications</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <div style="font-size:0.78rem; color:rgba(255,255,255,0.35); margin-bottom: 8px;">CERTIFICATIONS</div>
+          <div style="background:rgba(255,255,255,0.06); border-radius: 8px; padding: 12px 16px; font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.6;">
+            GST Registered ✓<br>Partnership Firm ✓<br>IndiaMART Verified ✓
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Aadi Packaging Indusries. All rights reserved.</span>
+      <span>Made with ❤️ in Meerut, Uttar Pradesh · <a href="#contact">aadi34b@yahoo.co.in</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919837181051?text=Hi%2C%20I%20need%20a%20packaging%20quote" class="wa-float" title="WhatsApp Us" target="_blank">💬</a>
+
+<!-- BACK TO TOP -->
+<div class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // --- Hamburger Menu ---
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // --- Back to Top ---
+  window.addEventListener('scroll', () => {
+    const bt = document.getElementById('backTop');
+    bt.classList.toggle('show', window.scrollY > 400);
+  });
+
+  // --- Calculator ---
+  function calculate() {
+    const L = parseFloat(document.getElementById('calcL').value);
+    const W = parseFloat(document.getElementById('calcW').value);
+    const H = parseFloat(document.getElementById('calcH').value);
+    const ply = parseInt(document.getElementById('calcPly').value);
+    const qty = parseInt(document.getElementById('calcQty').value);
+    const print = document.getElementById('calcPrint').value;
+
+    if (!L || !W || !H || !qty || qty < 1) {
+      showToast('Please fill all fields correctly.');
+      return;
+    }
+
+    // Surface area in sq inches
+    const area = 2 * (L*W + W*H + L*H);
+    // Base price per sq inch based on ply
+    const plyRate = ply === 3 ? 0.008 : ply === 5 ? 0.013 : 0.019;
+    // Print multiplier
+    const printMult = { plain: 1, '1color': 1.12, '2color': 1.22, custom: 1.45 }[print];
+    // Quantity discount
+    const qtyDiscount = qty >= 5000 ? 0.82 : qty >= 2000 ? 0.88 : qty >= 1000 ? 0.92 : qty >= 500 ? 0.96 : 1;
+
+    const basePerBox = area * plyRate * printMult * qtyDiscount;
+    const perBox = Math.max(basePerBox, ply === 3 ? 5 : ply === 5 ? 9 : 16);
+    const total = perBox * qty;
+
+    document.getElementById('rSize').textContent = `${L}" × ${W}" × ${H}"`;
+    document.getElementById('rPly').textContent = ply + ' Ply';
+    document.getElementById('rQty').textContent = qty.toLocaleString('en-IN') + ' boxes';
+    document.getElementById('rPer').textContent = '₹' + perBox.toFixed(2);
+    document.getElementById('rTotal').textContent = '₹' + Math.round(total).toLocaleString('en-IN');
+
+    const result = document.getElementById('calcResult');
+    result.classList.add('show');
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // --- Contact Form ---
+  function submitForm() {
+    const name = document.getElementById('cName').value.trim();
+    const phone = document.getElementById('cPhone').value.trim();
+    const email = document.getElementById('cEmail').value.trim();
+    const msg = document.getElementById('cMsg').value.trim();
+
+    if (!name || !phone || !email) {
+      showToast('Please fill in your name, phone and email.');
+      return;
+    }
+    showToast('✅ Thank you! We\'ll get back to you soon.');
+    ['cName','cCompany','cPhone','cEmail','cCategory','cMsg'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+  }
+
+  // --- Toast ---
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  // --- Smooth scroll for nav links ---
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // --- Active nav on scroll ---
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links > li > a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+</script>
+<script>
+function getFormData() {
+    const name = document.getElementById("cName").value.trim();
+    const phone = document.getElementById("cPhone").value.trim();
+    const email = document.getElementById("cEmail").value.trim();
+    const product = document.getElementById("cProduct").value;
+    const message = document.getElementById("cMessage").value.trim();
+
+    if (!name || !phone) {
+        alert("Please enter your Name and Phone Number.");
+        return null;
+    }
+
+    return {
+        name,
+        phone,
+        email,
+        product,
+        message
+    };
+}
+
+function sendWhatsApp() {
+    const data = getFormData();
+
+    if (!data) return;
+
+    const text =
+`Hello Aadi Packaging Industries,
+
+I would like to request a quotation.
+
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Product: ${data.product}
+
+Requirement Details:
+${data.message}`;
+
+    const whatsappNumber = "919837181051";
+
+    window.open(
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
+        "_blank"
+    );
+}
+
+function sendEmail() {
+    const data = getFormData();
+
+    if (!data) return;
+
+    const subject = "Packaging Quote Request";
+
+    const body =
+`Hello Aadi Packaging Industries,
+
+I would like to request a quotation.
+
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Product: ${data.product}
+
+Requirement Details:
+${data.message}`;
+
+    window.location.href =`mailto:aadi34b@yahoo.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+</body>
+</html>
